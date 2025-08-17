@@ -17,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('company')->latest()->get()->groupBy('featured');
+        $products = Product::with(['company', 'tags'])->latest()->get()->groupBy('featured');
         // return $products;
         // $tags = Tag::all();
         return view('products.index', [
@@ -40,14 +40,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-      $attributes =  $request->validate([
-            'name' => ['required'],
-            'price' => ['required'],
-            'featured' => ['required'],
-            'url' => ['required', 'active_url'],
-            'tags' => ['nullable'],
+        $attributes =  $request->validate([
+              'name' => ['required'],
+              'price' => ['required'],
+              'featured' => ['required'],
+              'url' => ['required', 'active_url'],
+              'tags' => ['nullable'],
 
-        ]);
+          ]);
 
         $attributes['featured'] =  $request->has('featured');
         $product =  Auth::user()->company->products()->create(Arr::except($attributes, 'tags'));

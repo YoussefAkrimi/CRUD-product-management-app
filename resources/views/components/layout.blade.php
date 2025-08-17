@@ -32,7 +32,16 @@
                 <a href="">Contact Us</a>
             </div>
             @auth
-                <a href="/products/create">Create a Product</a>
+             <div class="space-x-6 font-bold flex">
+                   <a href="/products/create">Create a Product</a>
+
+                <form method="POST" action="/logout">
+                    @csrf
+                    @method('DELETE')
+
+                    <button>Log Out</button>
+                </form>
+             </div>
 
             @endauth
             @guest
