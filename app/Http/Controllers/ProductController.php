@@ -17,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->get()->groupBy('featured');
+        $products = Product::with('company')->latest()->get()->groupBy('featured');
         // return $products;
         // $tags = Tag::all();
         return view('products.index', [

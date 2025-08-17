@@ -19,7 +19,7 @@ class CompanyFactory extends Factory
     {
         return [
             'name' => fake()->name,
-            'logo' => fake()->imageUrl,
+            'logo' => 'https://picsum.photos/seed/' . fake()->unique()->numberBetween(1, 100000) . '/150/150',
             'user_id' => User::factory(),
         ];
     }

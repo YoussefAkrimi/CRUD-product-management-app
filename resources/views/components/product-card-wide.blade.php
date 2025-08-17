@@ -3,7 +3,7 @@
 
 <x-panel class="flex gap-x-6">
     <div>
-        <x-company-logo />
+<x-company-logo :company="$product->company" />
     </div>
     <div class="flex-1 flex flex-col">
         <a href="" class="self-start text-sm text-gray-400">{{ $product->company->name }}</a>

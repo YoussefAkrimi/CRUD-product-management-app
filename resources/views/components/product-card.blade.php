@@ -17,7 +17,13 @@
             @endforeach
         </div>
 
-        <x-company-logo :width="42" />
+<x-company-logo :company="$product->company" :width="42" />
+{{--   <div>
+    <p>Test image:</p>
+    <img src="https://picsum.photos/200" alt="Test Logo" width="42">
+</div> --}}
+
+
     </div>
 
 </x-panel>
