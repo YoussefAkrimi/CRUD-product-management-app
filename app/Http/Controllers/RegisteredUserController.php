@@ -15,6 +15,7 @@ class RegisteredUserController extends Controller
    
     public function create()
     {
+        // dd('hello');
         return view('auth.register');
     }
 
@@ -30,6 +31,7 @@ class RegisteredUserController extends Controller
             'company' => ['required'],
             'logo' => ['required', File::types(['png', 'jpg', 'jpeg', 'webp'])],
         ]);
+        // create the user
         $user = User::create($userAttributes);
 
         $logoPath = $request->logo->store('logos');

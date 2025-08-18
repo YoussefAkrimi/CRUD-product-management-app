@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function __invoke()
     {
-        $products = Product::with(['company', 'tags'])->where('name', 'LIKE', '%' . request('q') . '%')->get();
+        $products = Product::where('name', 'LIKE', '%'.request('q').'%')->get();
         return view('results', ['products' => $products]);
     }
 }

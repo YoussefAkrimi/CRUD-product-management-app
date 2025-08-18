@@ -3,10 +3,10 @@
     <div class="space-y-10">
 
         <section class="text-center pt-6">
-            <h1 class="font-bold text-4xl">Looking for Something?</h1>
+            <h1 class="font-bold text-2xl mb-2">Looking for Something?</h1>
 
             <x-forms.form action="/search" class="mt6">
-                <x-forms.input :label="false" name="q" placeholder="Android..."></x-forms.input>
+<x-forms.input :label="false" name="q" placeholder="Android..." class="max-w-md mx-auto" />
 
             </x-forms.form>
         </section>

@@ -63,4 +63,9 @@ class ProductPolicy
     {
         return false;
     }
+    
+public function edit(User $user, Product $product): bool
+{
+    return $product->company->user->is($user);
+}
 }

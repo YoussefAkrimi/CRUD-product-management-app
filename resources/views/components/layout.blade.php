@@ -21,15 +21,15 @@
     <div class="px-10">
         <nav class="flex justify-between items-center py-4 border-b border-white/10"> {{-- border-white/10 means the border is white but the opcity is only 10% --}}
             <div>
-                <a href="">
+                <a href="/">
                     <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Logo"
                         style="width: 42px; height: auto;">
                 </a>
             </div>
             <div class="space-x-6 font-bold"> {{-- space-x-6 adds some space between the links --}}
-                <a href="">Home</a>
-                <a href="">Products</a>
-                <a href="">Contact Us</a>
+                <a href="/">Home</a>
+                <a href="/">Products</a>
+                <a href="/contact">Contact Us</a>
             </div>
             @auth
              <div class="space-x-6 font-bold flex">
